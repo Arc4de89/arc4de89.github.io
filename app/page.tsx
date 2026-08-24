@@ -9,6 +9,7 @@ type IconName =
   | "copy"
   | "eye"
   | "folder"
+  | "home"
   | "lock"
   | "network"
   | "rocket"
@@ -160,7 +161,7 @@ const content = {
 };
 
 function LogoMark({ small = false }: { small?: boolean }) {
-  return <span className={small ? "logo-mark logo-mark-small" : "logo-mark"} aria-hidden="true"><span className="logo-orbit" /><span className="logo-core" /><span className="logo-star" /></span>;
+  return <span className={small ? "logo-mark logo-mark-small" : "logo-mark"} aria-hidden="true"><img src="/app-icon.png" alt="" /></span>;
 }
 
 function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
@@ -170,6 +171,7 @@ function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
     copy: <><rect x="8" y="8" width="11" height="11" rx="2" /><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" /></>,
     eye: <><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" /><circle cx="12" cy="12" r="2.5" /></>,
     folder: <path d="M3 6.5a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />,
+    home: <><path d="m3 11 9-8 9 8" /><path d="M5 10v10h14V10" /><path d="M9 20v-6h6v6" /></>,
     lock: <><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></>,
     network: <><circle cx="12" cy="5" r="2" /><circle cx="5" cy="18" r="2" /><circle cx="19" cy="18" r="2" /><path d="M12 7v4m0 0-7 5m7-5 7 5" /></>,
     rocket: <><path d="M14 5c2.3-2.3 5.3-2 5.3-2s.3 3-2 5.3l-5.6 5.6-4.6-4.6Z" /><path d="m9.3 7.1-3.8.5L3 10.1l4.1.6M14 11.7l-.7 4.1-2.5 2.5-.5-3.8M6.5 14.5 3 18" /></>,
@@ -272,7 +274,7 @@ export default function Home() {
           <section className="faq-section section-wrap" id="faq"><div className="section-heading faq-heading"><div className="eyebrow eyebrow-plain">{c.faq.eyebrow}</div><h2>{c.faq.title}</h2></div><div className="faq-list">{c.faq.items.map((item) => <details key={item.q}><summary><span>{item.q}</span><i aria-hidden="true" /></summary><p>{item.a}</p></details>)}</div></section>
         </main>
 
-        <footer className="site-footer"><div className="footer-main section-wrap"><div><a className="brand" href="#top"><LogoMark /><span>AstroSync Companion</span></a><p>{c.footer.text}</p></div><a className="back-top" href="#top" aria-label={c.footer.top}>{c.footer.top}<span><LogoMark small /></span></a></div><div className="footer-legal section-wrap"><p>{c.footer.legal}</p><span>© 2026 AstroSync Companion</span></div></footer>
+        <footer className="site-footer"><div className="footer-main section-wrap"><div><a className="brand" href="#top"><LogoMark /><span>AstroSync Companion</span></a><p>{c.footer.text}</p></div><a className="back-top" href="#top" aria-label={c.footer.top}>{c.footer.top}<span><Icon name="home" size={16} /></span></a></div><div className="footer-legal section-wrap"><p>{c.footer.legal}</p><span>© 2026 AstroSync Companion</span></div></footer>
       </div>
     </>
   );

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: "summary_large_image", title: "AstroSync Companion",
     description: "Lokaler FITS-Transfer vom Seestar auf Windows – sicher, geordnet und ohne Cloud-Upload.", images: ["/og.jpg"],
   },
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: { icon: "/favicon.ico", shortcut: "/favicon.ico", apple: "/app-icon.png" },
 };
 
 const structuredData = {
