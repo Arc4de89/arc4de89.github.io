@@ -83,12 +83,12 @@ const content = {
       note: "AstroSync Companion kopiert passende Light-FITs vom lokalen Seestar-Speicher an dein gewähltes PC-Ziel. Die Originaldateien bleiben unangetastet. Optionale Astro-ID-Referenzbilder verwenden astronomische Onlinedienste und sind standardmässig deaktiviert.",
     },
     release: {
-      eyebrow: "Der nächste Schritt", title: "Die private Beta wächst Schritt für Schritt.",
-      text: "Ausgewählte Astrofotografen testen AstroSync Companion aktuell in echten Beobachtungsnächten. Ihr Feedback hilft dabei, Stabilität, Bedienung und den gesamten Session-Workflow weiter zu verbessern. Bald können sich weitere interessierte Astrofotografen für einen Platz im Betatest anmelden.",
+      eyebrow: "Der nächste Schritt", title: "Aktuell in Entwicklung.",
+      text: "AstroSync Companion befindet sich derzeit noch in Entwicklung. Ein erster Build wird bald verfügbar sein.",
       cardLabel: "Aktueller Status", cardTitle: "Private Beta",
       cardText: "Stabilität, Live-Erkennung und der komplette Session-Workflow werden jetzt unter echten Bedingungen getestet.",
       points: ["Windows Desktop-App", "Lokaler FIT-Workflow", "DE / EN", "Release-Details folgen"],
-      button: "Zur Funktionsübersicht", footnote: "Die Anmeldung für weitere Betatester wird bald geöffnet.",
+      button: "Zur Funktionsübersicht", footnote: "",
     },
     faq: {
       eyebrow: "Kurz beantwortet", title: "Häufige Fragen",
@@ -167,12 +167,12 @@ const content = {
       note: "AstroSync Companion copies matching Light FITs from local Seestar storage to the PC destination you choose. Your originals remain untouched. Optional Astro-ID reference images use astronomy web services and are disabled by default.",
     },
     release: {
-      eyebrow: "What comes next", title: "The private beta is growing step by step.",
-      text: "Selected astrophotographers are testing AstroSync Companion during real observing nights. Their feedback helps improve reliability, usability and the complete session workflow. More interested astrophotographers will soon be able to apply for a place in the beta test.",
+      eyebrow: "What comes next", title: "Currently in development.",
+      text: "AstroSync Companion is currently still in development. A first build will be available soon.",
       cardLabel: "Current status", cardTitle: "Private beta",
       cardText: "Stability, live detection and the complete session workflow are now being tested under real conditions.",
       points: ["Windows desktop app", "Local FIT workflow", "DE / EN", "Release details to come"],
-      button: "See all features", footnote: "Applications for additional beta testers will open soon.",
+      button: "See all features", footnote: "",
     },
     faq: {
       eyebrow: "Quick answers", title: "Frequently asked questions",
@@ -374,7 +374,7 @@ export default function Home() {
 
           <section className="release-section section-wrap" id="release">
             <div className="release-copy"><div className="eyebrow eyebrow-plain">{c.release.eyebrow}</div><h2>{c.release.title}</h2><p>{c.release.text}</p></div>
-            <div className="release-card"><div className="release-card-head"><span>{c.release.cardLabel}</span><i><span />LIVE</i></div><h3>{c.release.cardTitle}</h3><p>{c.release.cardText}</p><ul>{c.release.points.map(point => <li key={point}><Icon name="check" size={14} />{point}</li>)}</ul><a className="button button-primary" href="#features">{c.release.button}<Icon name="arrow" size={17} /></a><small>{c.release.footnote}</small></div>
+            <div className="release-card"><div className="release-card-head"><span>{c.release.cardLabel}</span><i><span />LIVE</i></div><h3>{c.release.cardTitle}</h3><p>{c.release.cardText}</p><ul>{c.release.points.map(point => <li key={point}><Icon name="check" size={14} />{point}</li>)}</ul><a className="button button-primary" href="#features">{c.release.button}<Icon name="arrow" size={17} /></a>{c.release.footnote && <small>{c.release.footnote}</small>}</div>
           </section>
 
           <section className="faq-section section-wrap" id="faq"><div className="section-heading faq-heading"><div className="eyebrow eyebrow-plain">{c.faq.eyebrow}</div><h2>{c.faq.title}</h2></div><div className="faq-list">{c.faq.items.map((item) => <details key={item.q}><summary><span>{item.q}</span><i aria-hidden="true" /></summary><p>{item.a}</p></details>)}</div></section>
