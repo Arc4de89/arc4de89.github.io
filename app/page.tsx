@@ -83,8 +83,8 @@ const content = {
       note: "AstroSync Companion kopiert passende Light-FITs vom lokalen Seestar-Speicher an dein gewähltes PC-Ziel. Die Originaldateien bleiben unangetastet. Optionale Astro-ID-Referenzbilder verwenden astronomische Onlinedienste und sind standardmässig deaktiviert.",
     },
     release: {
-      eyebrow: "Der nächste Schritt", title: "Private Beta läuft. Der Verkaufsstart folgt.",
-      text: "AstroSync Companion wird aktuell mit ausgewählten Astrofotografen im realen Einsatz geprüft. Preis, Lizenzmodell und Kaufmöglichkeit werden vor dem offiziellen Release hier veröffentlicht.",
+      eyebrow: "Der nächste Schritt", title: "Die private Beta ist gestartet.",
+      text: "Ausgewählte Astrofotografen testen AstroSync Companion aktuell in echten Beobachtungsnächten. Ihr Feedback hilft dabei, Stabilität, Bedienung und den gesamten Session-Workflow Schritt für Schritt zu verbessern.",
       cardLabel: "Aktueller Status", cardTitle: "Private Beta",
       cardText: "Stabilität, Live-Erkennung und der komplette Session-Workflow werden jetzt unter echten Bedingungen getestet.",
       points: ["Windows Desktop-App", "Lokaler FIT-Workflow", "DE / EN", "Release-Details folgen"],
@@ -167,8 +167,8 @@ const content = {
       note: "AstroSync Companion copies matching Light FITs from local Seestar storage to the PC destination you choose. Your originals remain untouched. Optional Astro-ID reference images use astronomy web services and are disabled by default.",
     },
     release: {
-      eyebrow: "What comes next", title: "Private beta is live. Public release comes next.",
-      text: "AstroSync Companion is currently being tested by selected astrophotographers in real-world sessions. Pricing, licensing and purchase options will be published here before the official release.",
+      eyebrow: "What comes next", title: "Private beta testing is underway.",
+      text: "Selected astrophotographers are testing AstroSync Companion during real observing nights. Their feedback helps improve reliability, usability and the complete session workflow step by step.",
       cardLabel: "Current status", cardTitle: "Private beta",
       cardText: "Stability, live detection and the complete session workflow are now being tested under real conditions.",
       points: ["Windows desktop app", "Local FIT workflow", "DE / EN", "Release details to come"],
