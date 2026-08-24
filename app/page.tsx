@@ -22,52 +22,52 @@ const content = {
     skip: "Zum Inhalt springen",
     nav: { features: "Funktionen", workflow: "Ablauf", privacy: "Datenschutz", faq: "FAQ", cta: "Beta & Release" },
     hero: {
-      eyebrow: "Private Beta · Windows",
+      eyebrow: "Unabhängige Windows-App · Private Beta",
       titleTop: "Deine Seestar-Aufnahmen.",
       titleAccent: "Automatisch auf deinem PC.",
-      text: "AstroSync überträgt neue Light-FITs während deiner Beobachtung sicher und geordnet auf deinen Windows-PC – bereit für deinen Astrofotografie-Workflow.",
-      primary: "AstroSync entdecken", secondary: "So funktioniert es",
+      text: "AstroSync Companion überträgt neue Light-FITs während deiner Beobachtung sicher und geordnet auf deinen Windows-PC – bereit für deinen Astrofotografie-Workflow.",
+      primary: "Funktionen entdecken", secondary: "So funktioniert es",
       trust: ["Kein Cloud-Upload", "Quelle bleibt unverändert", "Für Windows"],
     },
     app: {
-      version: "Beta", tabs: ["Übersicht", "Live FIT", "Einstellungen"], connected: "Seestar verbunden", auto: "Auto-Sync aktiv",
+      version: "Beta", tabs: ["Übersicht", "Live FIT", "Astro-ID", "Einstellungen"], connected: "Seestar verbunden", auto: "Auto-Sync aktiv",
       source: "QUELLE", sourceValue: "Seestar · EMMC Images", target: "ZIEL", targetValue: "Astrophotography / Auto-Sync",
       recent: "Zuletzt synchronisiert", object: "M 31 · Andromedagalaxie", frames: "24 neue Light-FITs",
       ready: "Alles synchronisiert", synced: "4’771 FITs sicher übertragen", sync: "Jetzt synchronisieren",
     },
     proof: {
       kicker: "Gebaut für eine ruhige Nacht unter Sternen", title: "Weniger Dateiarbeit. Mehr Zeit für das Bild.",
-      text: "AstroSync übernimmt den wiederkehrenden Transfer, während deine Quelldaten dort bleiben, wo sie sind.",
+      text: "AstroSync Companion übernimmt den wiederkehrenden Transfer, während deine Quelldaten dort bleiben, wo sie sind.",
     },
     features: {
-      eyebrow: "Was AstroSync übernimmt", title: "Vom Teleskop bis zur Bildbearbeitung – ohne Umwege.",
+      eyebrow: "Was AstroSync Companion übernimmt", title: "Vom Teleskop bis zur Bildbearbeitung – ohne Umwege.",
       text: "Die Funktionen konzentrieren sich auf einen zuverlässigen lokalen Workflow und klare Kontrolle.",
       items: [
         { icon: "network" as IconName, title: "Automatischer FIT-Transfer", text: "Neue Light-FITs werden fortlaufend erkannt und in dein gewähltes Ziel übertragen." },
-        { icon: "eye" as IconName, title: "Live-FIT-Ansicht", text: "Kontrolliere neue Aufnahmen direkt in AstroSync – mit Original-, Linear- und Auto-Stretch-Ansicht." },
-        { icon: "folder" as IconName, title: "Sauber organisiert", text: "AstroSync hält deinen lokalen Bestand übersichtlich und zeigt dir den effektiven Sync-Fortschritt." },
+        { icon: "eye" as IconName, title: "Live-FIT-Ansicht", text: "Kontrolliere neue Aufnahmen direkt in AstroSync Companion – mit Original-, Linear- und Auto-Stretch-Ansicht." },
+        { icon: "folder" as IconName, title: "Sauber organisiert", text: "AstroSync Companion hält deinen lokalen Bestand übersichtlich und zeigt dir den effektiven Sync-Fortschritt." },
         { icon: "shield" as IconName, title: "Sicheres Kopieren", text: "Dateien werden zuerst geschützt übertragen und erst nach vollständigem Abschluss bereitgestellt." },
         { icon: "rocket" as IconName, title: "Schneller Start", text: "Ein lokaler Index und gezielte Sicherheitsprüfungen vermeiden unnötige Vollscans." },
-        { icon: "tray" as IconName, title: "Unaufdringlich im Hintergrund", text: "Tray-Modus und Autostart lassen AstroSync während deiner Session zuverlässig mitlaufen." },
+        { icon: "tray" as IconName, title: "Unaufdringlich im Hintergrund", text: "Tray-Modus und Autostart lassen AstroSync Companion während deiner Session zuverlässig mitlaufen." },
       ],
     },
     workflow: {
       eyebrow: "In drei Schritten", title: "Einrichten. Beobachten. Weiterverarbeiten.",
       steps: [
-        { number: "01", title: "Seestar verbinden", text: "AstroSync findet den erreichbaren Bildordner in deinem lokalen Netzwerk." },
+        { number: "01", title: "Seestar verbinden", text: "AstroSync Companion findet den erreichbaren Bildordner in deinem lokalen Netzwerk." },
         { number: "02", title: "Zielordner wählen", text: "Lege einmal fest, wo deine FIT-Dateien auf dem Windows-PC gespeichert werden." },
         { number: "03", title: "Auto-Sync starten", text: "Neue Lights landen automatisch und sicher in deinem lokalen Workflow." },
       ],
     },
     privacy: {
       eyebrow: "Local first", title: "Deine Aufnahmen bleiben deine Aufnahmen.",
-      text: "AstroSync arbeitet in deinem lokalen Netzwerk. Es braucht weder ein Benutzerkonto noch einen Cloud-Speicher, um deine FIT-Dateien zu synchronisieren.",
+      text: "AstroSync Companion arbeitet in deinem lokalen Netzwerk. Es braucht weder ein Benutzerkonto noch einen Cloud-Speicher, um deine FIT-Dateien zu synchronisieren.",
       points: ["Keine FIT-Uploads in eine Cloud", "Keine Analyse- oder Werbe-SDKs", "Quelldateien werden nicht gelöscht", "Einstellungen und Verlauf bleiben lokal"],
-      note: "AstroSync kopiert passende Light-FITs vom lokalen Seestar-Speicher an dein gewähltes PC-Ziel. Die Originaldateien bleiben unangetastet.",
+      note: "AstroSync Companion kopiert passende Light-FITs vom lokalen Seestar-Speicher an dein gewähltes PC-Ziel. Die Originaldateien bleiben unangetastet. Optionale Astro-ID-Referenzbilder verwenden astronomische Onlinedienste und sind standardmässig deaktiviert.",
     },
     release: {
       eyebrow: "Der nächste Schritt", title: "Private Beta läuft. Der Verkaufsstart folgt.",
-      text: "AstroSync wird aktuell mit ausgewählten Astrofotografen im realen Einsatz geprüft. Preis, Lizenzmodell und Kaufmöglichkeit werden vor dem offiziellen Release hier veröffentlicht.",
+      text: "AstroSync Companion wird aktuell mit ausgewählten Astrofotografen im realen Einsatz geprüft. Preis, Lizenzmodell und Kaufmöglichkeit werden vor dem offiziellen Release hier veröffentlicht.",
       cardLabel: "Aktueller Status", cardTitle: "Private Beta",
       cardText: "Stabilität, Live-Erkennung und der komplette Session-Workflow werden jetzt unter echten Bedingungen getestet.",
       points: ["Windows Desktop-App", "Lokaler FIT-Workflow", "DE / EN", "Release-Details folgen"],
@@ -76,16 +76,16 @@ const content = {
     faq: {
       eyebrow: "Kurz beantwortet", title: "Häufige Fragen",
       items: [
-        { q: "Löscht AstroSync Dateien auf meinem Seestar?", a: "Nein. AstroSync kopiert passende Light-FITs auf deinen PC und verändert oder löscht die Quelldateien nicht." },
+        { q: "Löscht AstroSync Companion Dateien auf meinem Seestar?", a: "Nein. AstroSync Companion kopiert passende Light-FITs auf deinen PC und verändert oder löscht die Quelldateien nicht." },
         { q: "Werden meine Aufnahmen hochgeladen?", a: "Nein. Der FIT-Transfer findet lokal zwischen deinem Seestar-Speicher und deinem Windows-PC statt." },
-        { q: "Brauche ich ein Benutzerkonto?", a: "Für die lokale Synchronisation ist kein AstroSync-Benutzerkonto erforderlich." },
-        { q: "Wann kann ich AstroSync kaufen?", a: "Nach Abschluss der privaten Beta. Preis, Lizenzmodell und Kaufmöglichkeit werden vor dem Release auf dieser Seite ergänzt." },
-        { q: "Ist AstroSync eine offizielle ZWO-Software?", a: "Nein. AstroSync ist ein unabhängiges, inoffizielles Drittanbieterprojekt und nicht mit ZWO verbunden oder von ZWO unterstützt." },
+        { q: "Brauche ich ein Benutzerkonto?", a: "Für die lokale Synchronisation ist kein Benutzerkonto bei AstroSync Companion erforderlich." },
+        { q: "Wann kann ich AstroSync Companion kaufen?", a: "Nach Abschluss der privaten Beta. Preis, Lizenzmodell und Kaufmöglichkeit werden vor dem Release auf dieser Seite ergänzt." },
+        { q: "Ist AstroSync Companion eine offizielle ZWO-Software?", a: "Nein. AstroSync Companion ist eine unabhängige, inoffizielle Drittanbieter-Software für Astrofotografie und nicht mit ZWO verbunden oder von ZWO unterstützt." },
       ],
     },
     footer: {
       text: "Lokaler FIT-Transfer für einen ruhigeren Astrofotografie-Workflow.",
-      legal: "AstroSync ist ein unabhängiges, inoffizielles Drittanbieterprojekt. Seestar und ZWO sind Marken ihrer jeweiligen Eigentümer. Es besteht keine Verbindung, Partnerschaft oder Unterstützung durch ZWO.",
+      legal: "AstroSync Companion ist eine unabhängige, inoffizielle Drittanbieter-Software für Astrofotografie. Seestar und ZWO sind Marken ihrer jeweiligen Eigentümer. Es besteht keine Verbindung, Partnerschaft oder Unterstützung durch ZWO.",
       top: "Nach oben",
     },
   },
@@ -93,49 +93,49 @@ const content = {
     skip: "Skip to content",
     nav: { features: "Features", workflow: "Workflow", privacy: "Privacy", faq: "FAQ", cta: "Beta & release" },
     hero: {
-      eyebrow: "Private beta · Windows", titleTop: "Your Seestar captures.", titleAccent: "Automatically on your PC.",
-      text: "AstroSync transfers new Light FITs safely and neatly to your Windows PC while you observe – ready for your astrophotography workflow.",
-      primary: "Discover AstroSync", secondary: "How it works", trust: ["No cloud upload", "Source stays untouched", "Built for Windows"],
+      eyebrow: "Independent Windows app · Private beta", titleTop: "Your Seestar captures.", titleAccent: "Automatically on your PC.",
+      text: "AstroSync Companion transfers new Light FITs safely and neatly to your Windows PC while you observe – ready for your astrophotography workflow.",
+      primary: "Explore features", secondary: "How it works", trust: ["No cloud upload", "Source stays untouched", "Built for Windows"],
     },
     app: {
-      version: "Beta", tabs: ["Overview", "Live FIT", "Settings"], connected: "Seestar connected", auto: "Auto-Sync active",
+      version: "Beta", tabs: ["Overview", "Live FIT", "Astro-ID", "Settings"], connected: "Seestar connected", auto: "Auto-Sync active",
       source: "SOURCE", sourceValue: "Seestar · EMMC Images", target: "DESTINATION", targetValue: "Astrophotography / Auto-Sync",
       recent: "Recently synchronized", object: "M 31 · Andromeda Galaxy", frames: "24 new Light FITs",
       ready: "Everything synchronized", synced: "4,771 FITs transferred safely", sync: "Sync now",
     },
     proof: {
       kicker: "Built for a calm night under the stars", title: "Less file handling. More time for the image.",
-      text: "AstroSync handles the recurring transfer while your source data stays exactly where it is.",
+      text: "AstroSync Companion handles the recurring transfer while your source data stays exactly where it is.",
     },
     features: {
-      eyebrow: "What AstroSync handles", title: "From telescope to post-processing – without detours.",
+      eyebrow: "What AstroSync Companion handles", title: "From telescope to post-processing – without detours.",
       text: "Every feature is focused on a dependable local workflow and clear control.",
       items: [
         { icon: "network" as IconName, title: "Automatic FIT transfer", text: "New Light FITs are detected continuously and copied to the destination you choose." },
-        { icon: "eye" as IconName, title: "Live FIT view", text: "Inspect new captures inside AstroSync with Original, Linear and Auto Stretch views." },
-        { icon: "folder" as IconName, title: "Clean organization", text: "AstroSync keeps your local collection clear and shows the effective synchronization progress." },
+        { icon: "eye" as IconName, title: "Live FIT view", text: "Inspect new captures inside AstroSync Companion with Original, Linear and Auto Stretch views." },
+        { icon: "folder" as IconName, title: "Clean organization", text: "AstroSync Companion keeps your local collection clear and shows the effective synchronization progress." },
         { icon: "shield" as IconName, title: "Safe copying", text: "Files are transferred safely and only exposed at the destination after the copy is complete." },
         { icon: "rocket" as IconName, title: "Fast startup", text: "A local index and focused safety checks avoid unnecessary full scans." },
-        { icon: "tray" as IconName, title: "Quiet in the background", text: "Tray mode and autostart keep AstroSync running reliably throughout your session." },
+        { icon: "tray" as IconName, title: "Quiet in the background", text: "Tray mode and autostart keep AstroSync Companion running reliably throughout your session." },
       ],
     },
     workflow: {
       eyebrow: "Three simple steps", title: "Set up. Observe. Process.",
       steps: [
-        { number: "01", title: "Connect Seestar", text: "AstroSync finds the reachable image folder in your local network." },
+        { number: "01", title: "Connect Seestar", text: "AstroSync Companion finds the reachable image folder in your local network." },
         { number: "02", title: "Choose a destination", text: "Set once where your FIT files should be stored on your Windows PC." },
         { number: "03", title: "Start Auto-Sync", text: "New Lights arrive automatically and safely in your local workflow." },
       ],
     },
     privacy: {
       eyebrow: "Local first", title: "Your captures stay your captures.",
-      text: "AstroSync works inside your local network. It needs neither a user account nor cloud storage to synchronize your FIT files.",
+      text: "AstroSync Companion works inside your local network. It needs neither a user account nor cloud storage to synchronize your FIT files.",
       points: ["No FIT uploads to the cloud", "No analytics or advertising SDKs", "Source files are never deleted", "Settings and history stay local"],
-      note: "AstroSync copies matching Light FITs from local Seestar storage to the PC destination you choose. Your originals remain untouched.",
+      note: "AstroSync Companion copies matching Light FITs from local Seestar storage to the PC destination you choose. Your originals remain untouched. Optional Astro-ID reference images use astronomy web services and are disabled by default.",
     },
     release: {
       eyebrow: "What comes next", title: "Private beta is live. Public release comes next.",
-      text: "AstroSync is currently being tested by selected astrophotographers in real-world sessions. Pricing, licensing and purchase options will be published here before the official release.",
+      text: "AstroSync Companion is currently being tested by selected astrophotographers in real-world sessions. Pricing, licensing and purchase options will be published here before the official release.",
       cardLabel: "Current status", cardTitle: "Private beta",
       cardText: "Stability, live detection and the complete session workflow are now being tested under real conditions.",
       points: ["Windows desktop app", "Local FIT workflow", "DE / EN", "Release details to come"],
@@ -144,16 +144,16 @@ const content = {
     faq: {
       eyebrow: "Quick answers", title: "Frequently asked questions",
       items: [
-        { q: "Does AstroSync delete files from my Seestar?", a: "No. AstroSync copies matching Light FITs to your PC and never changes or deletes the source files." },
+        { q: "Does AstroSync Companion delete files from my Seestar?", a: "No. AstroSync Companion copies matching Light FITs to your PC and never changes or deletes the source files." },
         { q: "Are my captures uploaded anywhere?", a: "No. FIT transfer happens locally between your Seestar storage and your Windows PC." },
-        { q: "Do I need a user account?", a: "No AstroSync account is required for local synchronization." },
-        { q: "When can I buy AstroSync?", a: "After the private beta. Pricing, licensing and purchase options will be added to this page before release." },
-        { q: "Is AstroSync official ZWO software?", a: "No. AstroSync is an independent, unofficial third-party project. It is not affiliated with or endorsed by ZWO." },
+        { q: "Do I need a user account?", a: "No AstroSync Companion account is required for local synchronization." },
+        { q: "When can I buy AstroSync Companion?", a: "After the private beta. Pricing, licensing and purchase options will be added to this page before release." },
+        { q: "Is AstroSync Companion official ZWO software?", a: "No. AstroSync Companion is independent, unofficial third-party astrophotography software. It is not affiliated with or endorsed by ZWO." },
       ],
     },
     footer: {
       text: "Local FIT transfer for a calmer astrophotography workflow.",
-      legal: "AstroSync is an independent, unofficial third-party project. Seestar and ZWO are trademarks of their respective owners. AstroSync is not affiliated with, partnered with or endorsed by ZWO.",
+      legal: "AstroSync Companion is independent, unofficial third-party astrophotography software. Seestar and ZWO are trademarks of their respective owners. AstroSync Companion is not affiliated with, partnered with or endorsed by ZWO.",
       top: "Back to top",
     },
   },
@@ -184,11 +184,11 @@ function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
 function ProductVisual({ lang }: { lang: Language }) {
   const c = content[lang].app;
   return (
-    <div className="product-visual" aria-label={lang === "de" ? "Vorschau der AstroSync-Anwendung" : "Preview of the AstroSync application"}>
+    <div className="product-visual" aria-label={lang === "de" ? "Vorschau der Anwendung AstroSync Companion" : "Preview of the AstroSync Companion application"}>
       <div className="window-glow" />
       <div className="app-window">
         <div className="app-titlebar">
-          <div className="app-brand"><LogoMark small /><span>AstroSync</span><span className="app-version">{c.version}</span></div>
+          <div className="app-brand"><LogoMark small /><span>AstroSync Companion</span><span className="app-version">{c.version}</span></div>
           <div className="window-actions" aria-hidden="true"><i /><i /><i /></div>
         </div>
         <div className="app-tabs">{c.tabs.map((tab, index) => <span className={index === 0 ? "active" : ""} key={tab}>{tab}</span>)}</div>
@@ -222,7 +222,7 @@ export default function Home() {
       <a className="skip-link" href="#main">{c.skip}</a>
       <div className="site-shell" id="top">
         <header className="site-header">
-          <a className="brand" href="#top" aria-label="AstroSync home"><LogoMark /><span>AstroSync</span></a>
+          <a className="brand" href="#top" aria-label="AstroSync Companion home"><LogoMark /><span>AstroSync Companion</span></a>
           <nav className="main-nav" aria-label={lang === "de" ? "Hauptnavigation" : "Main navigation"}>
             <a href="#features">{c.nav.features}</a><a href="#workflow">{c.nav.workflow}</a><a href="#privacy">{c.nav.privacy}</a><a href="#faq">{c.nav.faq}</a>
           </nav>
@@ -272,7 +272,7 @@ export default function Home() {
           <section className="faq-section section-wrap" id="faq"><div className="section-heading faq-heading"><div className="eyebrow eyebrow-plain">{c.faq.eyebrow}</div><h2>{c.faq.title}</h2></div><div className="faq-list">{c.faq.items.map((item, index) => <details key={item.q} open={index === 0}><summary><span>{item.q}</span><i aria-hidden="true" /></summary><p>{item.a}</p></details>)}</div></section>
         </main>
 
-        <footer className="site-footer"><div className="footer-main section-wrap"><div><a className="brand" href="#top"><LogoMark /><span>AstroSync</span></a><p>{c.footer.text}</p></div><a className="back-top" href="#top">{c.footer.top}<span>↑</span></a></div><div className="footer-legal section-wrap"><p>{c.footer.legal}</p><span>© 2026 AstroSync</span></div></footer>
+        <footer className="site-footer"><div className="footer-main section-wrap"><div><a className="brand" href="#top"><LogoMark /><span>AstroSync Companion</span></a><p>{c.footer.text}</p></div><a className="back-top" href="#top">{c.footer.top}<span>↑</span></a></div><div className="footer-legal section-wrap"><p>{c.footer.legal}</p><span>© 2026 AstroSync Companion</span></div></footer>
       </div>
     </>
   );
