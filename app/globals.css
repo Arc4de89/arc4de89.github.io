@@ -386,7 +386,11 @@ summary:focus-visible {
 .product-visual {
   position: relative;
   z-index: 2;
+  width: 100%;
   min-width: 0;
+  justify-self: center;
+  margin-inline: auto;
+  transform-origin: center;
   transform: perspective(1300px) rotateY(-2deg) rotateX(1deg);
 }
 
@@ -438,34 +442,55 @@ summary:focus-visible {
 }
 
 .window-actions {
-  display: flex;
-  gap: 13px;
+  display: grid;
+  height: 20px;
+  grid-auto-columns: 14px;
+  grid-auto-flow: column;
+  gap: 4px;
+  align-items: center;
+  justify-items: center;
 }
 
 .window-actions i {
+  position: relative;
   display: block;
-  width: 9px;
+  width: 14px;
+  height: 14px;
+}
+
+.window-minimize::before,
+.window-close::before,
+.window-close::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
   height: 1px;
   background: #4f5a77;
+  content: "";
 }
 
-.window-actions i:nth-child(2) {
+.window-minimize::before {
+  transform: translate(-50%, -50%);
+}
+
+.window-maximize::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
   height: 7px;
   border: 1px solid #4f5a77;
-  background: transparent;
-}
-
-.window-actions i:nth-child(3) {
-  position: relative;
-  transform: rotate(45deg);
-}
-
-.window-actions i:nth-child(3)::after {
-  position: absolute;
-  inset: 0;
-  background: inherit;
   content: "";
-  transform: rotate(90deg);
+  transform: translate(-50%, -50%);
+}
+
+.window-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.window-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .app-tabs {
@@ -1711,11 +1736,17 @@ summary:focus-visible {
   }
 
   .sync-ready button {
+    display: grid;
     width: 30px;
     height: 28px;
     padding: 0;
-    justify-content: center;
+    gap: 0;
+    place-items: center;
     font-size: 0;
+  }
+
+  .sync-ready button svg {
+    display: block;
   }
 
   .float-card {

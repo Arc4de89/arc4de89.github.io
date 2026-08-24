@@ -9,6 +9,7 @@ type IconName =
   | "copy"
   | "eye"
   | "folder"
+  | "home"
   | "lock"
   | "network"
   | "rocket"
@@ -170,6 +171,7 @@ function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
     copy: <><rect x="8" y="8" width="11" height="11" rx="2" /><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" /></>,
     eye: <><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" /><circle cx="12" cy="12" r="2.5" /></>,
     folder: <path d="M3 6.5a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />,
+    home: <><path d="m3 11 9-8 9 8" /><path d="M5 10v10h14V10" /><path d="M9 20v-6h6v6" /></>,
     lock: <><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></>,
     network: <><circle cx="12" cy="5" r="2" /><circle cx="5" cy="18" r="2" /><circle cx="19" cy="18" r="2" /><path d="M12 7v4m0 0-7 5m7-5 7 5" /></>,
     rocket: <><path d="M14 5c2.3-2.3 5.3-2 5.3-2s.3 3-2 5.3l-5.6 5.6-4.6-4.6Z" /><path d="m9.3 7.1-3.8.5L3 10.1l4.1.6M14 11.7l-.7 4.1-2.5 2.5-.5-3.8M6.5 14.5 3 18" /></>,
@@ -189,7 +191,7 @@ function ProductVisual({ lang }: { lang: Language }) {
       <div className="app-window">
         <div className="app-titlebar">
           <div className="app-brand"><LogoMark small /><span>AstroSync Companion</span><span className="app-version">{c.version}</span></div>
-          <div className="window-actions" aria-hidden="true"><i /><i /><i /></div>
+          <div className="window-actions" aria-hidden="true"><i className="window-minimize" /><i className="window-maximize" /><i className="window-close" /></div>
         </div>
         <div className="app-tabs">{c.tabs.map((tab, index) => <span className={index === 0 ? "active" : ""} key={tab}>{tab}</span>)}</div>
         <div className="app-body">
@@ -269,10 +271,10 @@ export default function Home() {
             <div className="release-card"><div className="release-card-head"><span>{c.release.cardLabel}</span><i><span />LIVE</i></div><h3>{c.release.cardTitle}</h3><p>{c.release.cardText}</p><ul>{c.release.points.map(point => <li key={point}><Icon name="check" size={14} />{point}</li>)}</ul><a className="button button-primary" href="#features">{c.release.button}<Icon name="arrow" size={17} /></a><small>{c.release.footnote}</small></div>
           </section>
 
-          <section className="faq-section section-wrap" id="faq"><div className="section-heading faq-heading"><div className="eyebrow eyebrow-plain">{c.faq.eyebrow}</div><h2>{c.faq.title}</h2></div><div className="faq-list">{c.faq.items.map((item, index) => <details key={item.q} open={index === 0}><summary><span>{item.q}</span><i aria-hidden="true" /></summary><p>{item.a}</p></details>)}</div></section>
+          <section className="faq-section section-wrap" id="faq"><div className="section-heading faq-heading"><div className="eyebrow eyebrow-plain">{c.faq.eyebrow}</div><h2>{c.faq.title}</h2></div><div className="faq-list">{c.faq.items.map((item) => <details key={item.q}><summary><span>{item.q}</span><i aria-hidden="true" /></summary><p>{item.a}</p></details>)}</div></section>
         </main>
 
-        <footer className="site-footer"><div className="footer-main section-wrap"><div><a className="brand" href="#top"><LogoMark /><span>AstroSync Companion</span></a><p>{c.footer.text}</p></div><a className="back-top" href="#top">{c.footer.top}<span>↑</span></a></div><div className="footer-legal section-wrap"><p>{c.footer.legal}</p><span>© 2026 AstroSync Companion</span></div></footer>
+        <footer className="site-footer"><div className="footer-main section-wrap"><div><a className="brand" href="#top"><LogoMark /><span>AstroSync Companion</span></a><p>{c.footer.text}</p></div><a className="back-top" href="#top" aria-label={c.footer.top}>{c.footer.top}<span><Icon name="home" size={16} /></span></a></div><div className="footer-legal section-wrap"><p>{c.footer.legal}</p><span>© 2026 AstroSync Companion</span></div></footer>
       </div>
     </>
   );
