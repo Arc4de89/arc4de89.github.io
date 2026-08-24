@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 type Language = "de" | "en";
 type IconName =
@@ -319,6 +319,40 @@ function AppShowcase({ lang }: { lang: Language }) {
 export default function Home() {
   const [lang, setLang] = useState<Language>("de");
   const c = content[lang];
+
+  useLayoutEffect(() => {
+    const navigation = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
+    if (navigation?.type !== "reload") return;
+
+    const previousRestoration = history.scrollRestoration;
+    history.scrollRestoration = "manual";
+
+    if (window.location.hash) {
+      history.replaceState(history.state, "", `${window.location.pathname}${window.location.search}`);
+    }
+
+    const resetScroll = () => {
+      const root = document.documentElement;
+      const previousBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
+      root.style.scrollBehavior = previousBehavior;
+    };
+
+    resetScroll();
+    const animationFrame = window.requestAnimationFrame(resetScroll);
+    const resetTimer = window.setTimeout(() => {
+      resetScroll();
+      history.scrollRestoration = previousRestoration;
+    }, 250);
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+      window.clearTimeout(resetTimer);
+      history.scrollRestoration = previousRestoration;
+    };
+  }, []);
+
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
 
   return (
