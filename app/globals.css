@@ -914,10 +914,12 @@ summary:focus-visible {
   transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
 }
 
-.feature-card:hover {
-  border-color: rgba(111, 143, 222, 0.27);
-  background: linear-gradient(145deg, rgba(21, 29, 62, 0.82), rgba(11, 16, 36, 0.74));
-  transform: translateY(-4px);
+@media (hover: hover) and (pointer: fine) {
+  .feature-card:hover {
+    border-color: rgba(111, 143, 222, 0.27);
+    background: linear-gradient(145deg, rgba(21, 29, 62, 0.82), rgba(11, 16, 36, 0.74));
+    transform: translateY(-4px);
+  }
 }
 
 .feature-topline {
