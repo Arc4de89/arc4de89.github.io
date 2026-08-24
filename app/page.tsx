@@ -40,6 +40,17 @@ const content = {
       kicker: "Gebaut für eine ruhige Nacht unter Sternen", title: "Weniger Dateiarbeit. Mehr Zeit für das Bild.",
       text: "AstroSync Companion übernimmt den wiederkehrenden Transfer, während deine Quelldaten dort bleiben, wo sie sind.",
     },
+    showcase: {
+      eyebrow: "Echte Einblicke", title: "Vier Ansichten. Ein ruhiger Workflow.",
+      text: "Entdecke die zentralen Bereiche von AstroSync Companion anhand echter Screenshots aus der Beta.",
+      previous: "Vorherige Ansicht", next: "Nächste Ansicht", carousel: "AstroSync Companion App-Ansichten",
+      slides: [
+        { label: "Übersicht", title: "Deine ganze Session auf einen Blick.", text: "Verbindung, Warteschlange, letzte Synchronisierung und laufender Transfer bleiben jederzeit sichtbar.", image: "/screens/overview.jpg", alt: "AstroSync Companion Übersicht mit Auto-Sync, letzter Session und laufendem FIT-Transfer", width: 1175, height: 716, portrait: false },
+        { label: "Live FIT", title: "Neue FITs sofort kontrollieren.", text: "Prüfe neue Aufnahmen in Original-, Linear- oder Auto-Stretch-Ansicht, ohne die FIT-Datei zu verändern.", image: "/screens/live-fit.jpg", alt: "Live FIT Lab von AstroSync Companion mit Auto-Stretch-Vorschau und FIT-Informationen", width: 1100, height: 708, portrait: false },
+        { label: "Astro-ID", title: "Objekte erkennen und einordnen.", text: "Löse astronomische Bezeichnungen auf und vergleiche das Ergebnis mit einem echten DSS2-Himmelsausschnitt.", image: "/screens/astro-id.jpg", alt: "Astro-ID von AstroSync Companion mit M 15, Objektdaten und DSS2-Himmelsvorschau", width: 1035, height: 680, portrait: false },
+        { label: "Einstellungen", title: "Fein abgestimmt und klar kontrollierbar.", text: "Sync-Verhalten, Autostart, Sprache, optionale Onlinedienste und Systemcheck befinden sich an einem Ort.", image: "/screens/settings.jpg", alt: "Einstellungen von AstroSync Companion mit Synchronisation, Sprache, Datenschutz und Systemdiagnose", width: 795, height: 1213, portrait: true },
+      ],
+    },
     features: {
       eyebrow: "Was AstroSync Companion übernimmt", title: "Vom Teleskop bis zur Bildbearbeitung – ohne Umwege.",
       text: "Die Funktionen konzentrieren sich auf einen zuverlässigen lokalen Workflow und klare Kontrolle.",
@@ -107,6 +118,17 @@ const content = {
     proof: {
       kicker: "Built for a calm night under the stars", title: "Less file handling. More time for the image.",
       text: "AstroSync Companion handles the recurring transfer while your source data stays exactly where it is.",
+    },
+    showcase: {
+      eyebrow: "Real app views", title: "Four views. One calm workflow.",
+      text: "Explore the core areas of AstroSync Companion through real screenshots from the beta.",
+      previous: "Previous view", next: "Next view", carousel: "AstroSync Companion app views",
+      slides: [
+        { label: "Overview", title: "Your entire session at a glance.", text: "Connection, queue, latest synchronization and the active transfer remain visible at all times.", image: "/screens/overview.jpg", alt: "AstroSync Companion overview showing Auto-Sync, the latest session and an active FIT transfer", width: 1175, height: 716, portrait: false },
+        { label: "Live FIT", title: "Inspect new FITs immediately.", text: "Review new captures in Original, Linear or Auto Stretch view without changing the FIT file.", image: "/screens/live-fit.jpg", alt: "AstroSync Companion Live FIT Lab with Auto Stretch preview and FIT information", width: 1100, height: 708, portrait: false },
+        { label: "Astro-ID", title: "Identify and understand objects.", text: "Resolve astronomical identifiers and compare the result with a real DSS2 sky survey cutout.", image: "/screens/astro-id.jpg", alt: "AstroSync Companion Astro-ID showing M 15 object data and a DSS2 sky preview", width: 1035, height: 680, portrait: false },
+        { label: "Settings", title: "Fine-tuned and clearly controlled.", text: "Sync behavior, autostart, language, optional online services and system checks live in one place.", image: "/screens/settings.jpg", alt: "AstroSync Companion settings covering synchronization, language, privacy and system diagnostics", width: 795, height: 1213, portrait: true },
+      ],
     },
     features: {
       eyebrow: "What AstroSync Companion handles", title: "From telescope to post-processing – without detours.",
@@ -214,6 +236,63 @@ function ProductVisual({ lang }: { lang: Language }) {
   );
 }
 
+function AppShowcase({ lang }: { lang: Language }) {
+  const c = content[lang].showcase;
+  const [active, setActive] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const slide = c.slides[active];
+
+  const move = (direction: number) => {
+    setActive((current) => (current + direction + c.slides.length) % c.slides.length);
+  };
+
+  return (
+    <section className="showcase-section section-wrap" aria-labelledby="showcase-title">
+      <div className="showcase-heading">
+        <div><div className="eyebrow eyebrow-plain">{c.eyebrow}</div><h2 id="showcase-title">{c.title}</h2></div>
+        <p>{c.text}</p>
+      </div>
+
+      <div className="showcase-shell">
+        <div className="showcase-toolbar">
+          <div className="showcase-position"><span>{String(active + 1).padStart(2, "0")}</span><i>/</i><small>{String(c.slides.length).padStart(2, "0")}</small><strong>{slide.label}</strong></div>
+          <div className="showcase-arrows">
+            <button className="showcase-arrow showcase-previous" type="button" onClick={() => move(-1)} aria-label={c.previous}><Icon name="arrow" size={17} /></button>
+            <button className="showcase-arrow" type="button" onClick={() => move(1)} aria-label={c.next}><Icon name="arrow" size={17} /></button>
+          </div>
+        </div>
+
+        <div
+          className={`showcase-stage${slide.portrait ? " is-portrait" : ""}`}
+          role="group"
+          aria-roledescription="carousel"
+          aria-label={c.carousel}
+          tabIndex={0}
+          onKeyDown={(event) => { if (event.key === "ArrowLeft") move(-1); if (event.key === "ArrowRight") move(1); }}
+          onTouchStart={(event) => setTouchStart(event.touches[0]?.clientX ?? null)}
+          onTouchEnd={(event) => {
+            const touchEnd = event.changedTouches[0]?.clientX;
+            if (touchStart !== null && touchEnd !== undefined && Math.abs(touchStart - touchEnd) > 45) move(touchStart > touchEnd ? 1 : -1);
+            setTouchStart(null);
+          }}
+        >
+          <div className="showcase-backdrop" style={{ backgroundImage: `url(${slide.image})` }} aria-hidden="true" />
+          <figure className="showcase-slide" key={`${lang}-${slide.image}`}>
+            <img src={slide.image} alt={slide.alt} width={slide.width} height={slide.height} draggable="false" />
+          </figure>
+        </div>
+
+        <div className="showcase-footer">
+          <div className="showcase-caption" aria-live="polite"><span>{slide.label}</span><h3>{slide.title}</h3><p>{slide.text}</p></div>
+          <div className="showcase-tabs" role="tablist" aria-label={c.carousel}>
+            {c.slides.map((item, index) => <button type="button" role="tab" aria-selected={index === active} className={index === active ? "active" : ""} onClick={() => setActive(index)} key={item.label}><i>{String(index + 1).padStart(2, "0")}</i><span>{item.label}</span></button>)}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const [lang, setLang] = useState<Language>("de");
   const c = content[lang];
@@ -250,6 +329,8 @@ export default function Home() {
           </section>
 
           <section className="proof-strip"><div className="proof-inner section-wrap"><p>{c.proof.kicker}</p><div><h2>{c.proof.title}</h2><span>{c.proof.text}</span></div></div></section>
+
+          <AppShowcase lang={lang} />
 
           <section className="features-section section-wrap" id="features">
             <div className="section-heading"><div className="eyebrow eyebrow-plain">{c.features.eyebrow}</div><h2>{c.features.title}</h2><p>{c.features.text}</p></div>
