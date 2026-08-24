@@ -83,12 +83,12 @@ const content = {
       note: "AstroSync Companion kopiert passende Light-FITs vom lokalen Seestar-Speicher an dein gewähltes PC-Ziel. Die Originaldateien bleiben unangetastet. Optionale Astro-ID-Referenzbilder verwenden astronomische Onlinedienste und sind standardmässig deaktiviert.",
     },
     release: {
-      eyebrow: "Der nächste Schritt", title: "Die private Beta ist gestartet.",
-      text: "Ausgewählte Astrofotografen testen AstroSync Companion aktuell in echten Beobachtungsnächten. Ihr Feedback hilft dabei, Stabilität, Bedienung und den gesamten Session-Workflow Schritt für Schritt zu verbessern.",
+      eyebrow: "Der nächste Schritt", title: "Die private Beta wächst Schritt für Schritt.",
+      text: "Ausgewählte Astrofotografen testen AstroSync Companion aktuell in echten Beobachtungsnächten. Ihr Feedback hilft dabei, Stabilität, Bedienung und den gesamten Session-Workflow weiter zu verbessern. Bald können sich weitere interessierte Astrofotografen für einen Platz im Betatest anmelden.",
       cardLabel: "Aktueller Status", cardTitle: "Private Beta",
       cardText: "Stabilität, Live-Erkennung und der komplette Session-Workflow werden jetzt unter echten Bedingungen getestet.",
       points: ["Windows Desktop-App", "Lokaler FIT-Workflow", "DE / EN", "Release-Details folgen"],
-      button: "Zur Funktionsübersicht", footnote: "Noch kein öffentlicher Download oder Verkauf.",
+      button: "Zur Funktionsübersicht", footnote: "Die Anmeldung für weitere Betatester wird bald geöffnet.",
     },
     faq: {
       eyebrow: "Kurz beantwortet", title: "Häufige Fragen",
@@ -167,12 +167,12 @@ const content = {
       note: "AstroSync Companion copies matching Light FITs from local Seestar storage to the PC destination you choose. Your originals remain untouched. Optional Astro-ID reference images use astronomy web services and are disabled by default.",
     },
     release: {
-      eyebrow: "What comes next", title: "Private beta testing is underway.",
-      text: "Selected astrophotographers are testing AstroSync Companion during real observing nights. Their feedback helps improve reliability, usability and the complete session workflow step by step.",
+      eyebrow: "What comes next", title: "The private beta is growing step by step.",
+      text: "Selected astrophotographers are testing AstroSync Companion during real observing nights. Their feedback helps improve reliability, usability and the complete session workflow. More interested astrophotographers will soon be able to apply for a place in the beta test.",
       cardLabel: "Current status", cardTitle: "Private beta",
       cardText: "Stability, live detection and the complete session workflow are now being tested under real conditions.",
       points: ["Windows desktop app", "Local FIT workflow", "DE / EN", "Release details to come"],
-      button: "See all features", footnote: "No public download or purchase yet.",
+      button: "See all features", footnote: "Applications for additional beta testers will open soon.",
     },
     faq: {
       eyebrow: "Quick answers", title: "Frequently asked questions",
