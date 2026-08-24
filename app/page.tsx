@@ -41,14 +41,13 @@ const content = {
       text: "AstroSync Companion übernimmt den wiederkehrenden Transfer, während deine Quelldaten dort bleiben, wo sie sind.",
     },
     showcase: {
-      eyebrow: "Echte Einblicke", title: "Vier Ansichten. Ein ruhiger Workflow.",
+      eyebrow: "Echte Einblicke", title: "Drei Ansichten. Ein ruhiger Workflow.",
       text: "Entdecke die zentralen Bereiche von AstroSync Companion anhand echter Screenshots aus der Beta.",
       previous: "Vorherige Ansicht", next: "Nächste Ansicht", carousel: "AstroSync Companion App-Ansichten",
       slides: [
         { label: "Übersicht", title: "Deine ganze Session auf einen Blick.", text: "Verbindung, Warteschlange, letzte Synchronisierung und laufender Transfer bleiben jederzeit sichtbar.", image: "/screens/overview.jpg", alt: "AstroSync Companion Übersicht mit Auto-Sync, letzter Session und laufendem FIT-Transfer", width: 1175, height: 716, portrait: false },
         { label: "Astro-ID · M31", title: "Die Andromedagalaxie klar bestimmt.", text: "Löse M31 auf und vergleiche die Objektdaten mit einem echten DSS2-Himmelsausschnitt.", image: "/screens/astro-id-m31.jpg", alt: "Astro-ID von AstroSync Companion mit M31, Daten zur Andromedagalaxie und DSS2-Himmelsvorschau", width: 1343, height: 840, portrait: false },
-        { label: "Astro-ID · M15", title: "Objekte erkennen und einordnen.", text: "Löse astronomische Bezeichnungen auf und vergleiche das Ergebnis mit einem echten DSS2-Himmelsausschnitt.", image: "/screens/astro-id.jpg", alt: "Astro-ID von AstroSync Companion mit M15, Objektdaten und DSS2-Himmelsvorschau", width: 1035, height: 680, portrait: false },
-        { label: "Einstellungen", title: "Fein abgestimmt und klar kontrollierbar.", text: "Sync-Verhalten, Autostart, Sprache, optionale Onlinedienste und Systemcheck befinden sich an einem Ort.", image: "/screens/settings.jpg", alt: "Einstellungen von AstroSync Companion mit Synchronisation, Sprache, Datenschutz und Systemdiagnose", width: 795, height: 1213, portrait: true },
+        { label: "Live FIT · Auto Stretch", title: "Neue FITs direkt beurteilen.", text: "Kontrolliere neue Aufnahmen mit Auto Stretch, während die originale FIT-Datei vollständig unverändert bleibt.", image: "/screens/auto-stretch.jpg", alt: "Live FIT Lab von AstroSync Companion mit Auto-Stretch-Vorschau und FIT-Informationen", width: 1101, height: 717, portrait: false },
       ],
     },
     features: {
@@ -120,14 +119,13 @@ const content = {
       text: "AstroSync Companion handles the recurring transfer while your source data stays exactly where it is.",
     },
     showcase: {
-      eyebrow: "Real app views", title: "Four views. One calm workflow.",
+      eyebrow: "Real app views", title: "Three views. One calm workflow.",
       text: "Explore the core areas of AstroSync Companion through real screenshots from the beta.",
       previous: "Previous view", next: "Next view", carousel: "AstroSync Companion app views",
       slides: [
         { label: "Overview", title: "Your entire session at a glance.", text: "Connection, queue, latest synchronization and the active transfer remain visible at all times.", image: "/screens/overview.jpg", alt: "AstroSync Companion overview showing Auto-Sync, the latest session and an active FIT transfer", width: 1175, height: 716, portrait: false },
         { label: "Astro-ID · M31", title: "Andromeda clearly identified.", text: "Resolve M31 and compare its object data with a real DSS2 sky survey cutout.", image: "/screens/astro-id-m31.jpg", alt: "AstroSync Companion Astro-ID showing M31, Andromeda Galaxy data and a DSS2 sky preview", width: 1343, height: 840, portrait: false },
-        { label: "Astro-ID · M15", title: "Identify and understand objects.", text: "Resolve astronomical identifiers and compare the result with a real DSS2 sky survey cutout.", image: "/screens/astro-id.jpg", alt: "AstroSync Companion Astro-ID showing M15 object data and a DSS2 sky preview", width: 1035, height: 680, portrait: false },
-        { label: "Settings", title: "Fine-tuned and clearly controlled.", text: "Sync behavior, autostart, language, optional online services and system checks live in one place.", image: "/screens/settings.jpg", alt: "AstroSync Companion settings covering synchronization, language, privacy and system diagnostics", width: 795, height: 1213, portrait: true },
+        { label: "Live FIT · Auto Stretch", title: "Inspect new FITs immediately.", text: "Review new captures with Auto Stretch while the original FIT file remains completely untouched.", image: "/screens/auto-stretch.jpg", alt: "AstroSync Companion Live FIT Lab with Auto Stretch preview and FIT information", width: 1101, height: 717, portrait: false },
       ],
     },
     features: {
