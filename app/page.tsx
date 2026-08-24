@@ -44,6 +44,12 @@ const content = {
       eyebrow: "Echte Einblicke", title: "Drei Ansichten. Ein ruhiger Workflow.",
       text: "Entdecke die zentralen Bereiche von AstroSync Companion anhand echter Screenshots aus der Beta.",
       previous: "Vorherige Ansicht", next: "Nächste Ansicht", carousel: "AstroSync Companion App-Ansichten",
+      onlineNote: {
+        title: "Online-Hinweis",
+        text: "Astro-ID verwendet optionale externe Astronomiedienste. Es werden keine FIT-Dateien hochgeladen; übertragen werden nur die für die Abfrage notwendigen Objekt- und Koordinatendaten. Die Funktion ist standardmässig deaktiviert.",
+        source: "Bildquelle: CDS / Aladin HiPS2FITS / DSS2",
+        privacy: "Datenschutzdetails",
+      },
       slides: [
         { label: "Übersicht", title: "Deine ganze Session auf einen Blick.", text: "Verbindung, Warteschlange, letzte Synchronisierung und laufender Transfer bleiben jederzeit sichtbar.", image: "/screens/overview.jpg", alt: "AstroSync Companion Übersicht mit Auto-Sync, letzter Session und laufendem FIT-Transfer", width: 1175, height: 716, portrait: false },
         { label: "Live FIT · Auto Stretch", title: "Neue FITs direkt beurteilen.", text: "Kontrolliere neue Aufnahmen mit Auto Stretch, während die originale FIT-Datei vollständig unverändert bleibt.", image: "/screens/auto-stretch.jpg", alt: "Live FIT Lab von AstroSync Companion mit Auto-Stretch-Vorschau und FIT-Informationen", width: 1101, height: 717, portrait: false },
@@ -122,6 +128,12 @@ const content = {
       eyebrow: "Real app views", title: "Three views. One calm workflow.",
       text: "Explore the core areas of AstroSync Companion through real screenshots from the beta.",
       previous: "Previous view", next: "Next view", carousel: "AstroSync Companion app views",
+      onlineNote: {
+        title: "Online notice",
+        text: "Astro-ID uses optional external astronomy services. No FIT files are uploaded; only the object and coordinate data required for the request is transmitted. The feature is disabled by default.",
+        source: "Image source: CDS / Aladin HiPS2FITS / DSS2",
+        privacy: "Privacy details",
+      },
       slides: [
         { label: "Overview", title: "Your entire session at a glance.", text: "Connection, queue, latest synchronization and the active transfer remain visible at all times.", image: "/screens/overview.jpg", alt: "AstroSync Companion overview showing Auto-Sync, the latest session and an active FIT transfer", width: 1175, height: 716, portrait: false },
         { label: "Live FIT · Auto Stretch", title: "Inspect new FITs immediately.", text: "Review new captures with Auto Stretch while the original FIT file remains completely untouched.", image: "/screens/auto-stretch.jpg", alt: "AstroSync Companion Live FIT Lab with Auto Stretch preview and FIT information", width: 1101, height: 717, portrait: false },
@@ -281,7 +293,22 @@ function AppShowcase({ lang }: { lang: Language }) {
         </div>
 
         <div className="showcase-footer">
-          <div className="showcase-caption" aria-live="polite"><span>{slide.label}</span><h3>{slide.title}</h3><p>{slide.text}</p></div>
+          <div className="showcase-caption" aria-live="polite">
+            <span>{slide.label}</span><h3>{slide.title}</h3><p>{slide.text}</p>
+            {slide.image === "/screens/astro-id-m31.jpg" && (
+              <div className="showcase-online-note">
+                <Icon name="lock" size={14} />
+                <div>
+                  <strong>{c.onlineNote.title}</strong>
+                  <p>{c.onlineNote.text}</p>
+                  <div className="showcase-online-links">
+                    <a href="https://aladin.cds.unistra.fr/hips/" target="_blank" rel="noreferrer">{c.onlineNote.source}</a>
+                    <a href="#privacy">{c.onlineNote.privacy}</a>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
           <div className="showcase-tabs" role="tablist" aria-label={c.carousel}>
             {c.slides.map((item, index) => <button type="button" role="tab" aria-selected={index === active} className={index === active ? "active" : ""} onClick={() => setActive(index)} key={item.label}><i>{String(index + 1).padStart(2, "0")}</i><span>{item.label}</span></button>)}
           </div>
