@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useState } from "react";
+import { type FormEvent, useEffect, useLayoutEffect, useState } from "react";
 
 type Language = "de" | "en";
 type IconName =
@@ -21,7 +21,7 @@ type IconName =
 const content = {
   de: {
     skip: "Zum Inhalt springen",
-    nav: { features: "Funktionen", workflow: "Ablauf", privacy: "Datenschutz", faq: "FAQ", cta: "Beta & Release" },
+    nav: { features: "Funktionen", workflow: "Ablauf", privacy: "Datenschutz", faq: "FAQ", contact: "Kontakt", cta: "Beta & Release" },
     hero: {
       eyebrow: "Unabhängige Windows-App · Private Beta",
       titleTop: "Deine Seestar-Aufnahmen.",
@@ -81,6 +81,8 @@ const content = {
       text: "AstroSync Companion arbeitet in deinem lokalen Netzwerk. Es braucht weder ein Benutzerkonto noch einen Cloud-Speicher, um deine FIT-Dateien zu synchronisieren.",
       points: ["Keine FIT-Uploads in eine Cloud", "Keine Analyse- oder Werbe-SDKs", "Quelldateien werden nicht gelöscht", "Einstellungen und Verlauf bleiben lokal"],
       note: "AstroSync Companion kopiert passende Light-FITs vom lokalen Seestar-Speicher an dein gewähltes PC-Ziel. Die Originaldateien bleiben unangetastet. Optionale Astro-ID-Referenzbilder verwenden astronomische Onlinedienste und sind standardmässig deaktiviert.",
+      contactNote: "Beim Kontaktformular werden Name, E-Mail-Adresse, gewähltes Thema und Nachricht über Formspree verarbeitet, an uns weitergeleitet und im kostenlosen Tarif für 30 Tage gespeichert. Bitte übermittle keine sensiblen Informationen oder Zugangsdaten.",
+      contactLink: "Datenschutz bei Formspree",
     },
     release: {
       eyebrow: "Der nächste Schritt", title: "Aktuell in Entwicklung.",
@@ -99,6 +101,26 @@ const content = {
         { q: "Ist AstroSync Companion eine offizielle ZWO-Software?", a: "Nein. AstroSync Companion ist eine unabhängige, inoffizielle Drittanbieter-Software für Astrofotografie und nicht mit ZWO verbunden oder von ZWO unterstützt." },
       ],
     },
+    contact: {
+      eyebrow: "Direkter Kontakt",
+      title: "Fragen zu AstroSync Companion?",
+      text: "Nutze das Formular für Fragen, Feedback oder dein Interesse an einem späteren Betatest. Deine Nachricht wird direkt an den Entwickler weitergeleitet.",
+      name: "Name", namePlaceholder: "Dein Name",
+      email: "E-Mail-Adresse", emailPlaceholder: "name@beispiel.ch",
+      topic: "Thema", topicPlaceholder: "Bitte auswählen",
+      topics: [
+        { value: "general", label: "Allgemeine Anfrage" },
+        { value: "beta", label: "Interesse am Betatest" },
+        { value: "feedback", label: "Feedback zur App" },
+        { value: "website", label: "Feedback zur Website" },
+      ],
+      message: "Nachricht", messagePlaceholder: "Worum geht es?",
+      privacyBefore: "Ich habe den ", privacyLink: "Datenschutzhinweis", privacyAfter: " gelesen und bin mit der Übermittlung meiner Angaben über Formspree einverstanden.",
+      caution: "Bitte keine Passwörter, Zugangsdaten oder andere sensible Informationen senden.",
+      send: "Nachricht senden", sending: "Wird gesendet …",
+      success: "Danke! Deine Nachricht wurde erfolgreich übermittelt.",
+      error: "Die Nachricht konnte nicht gesendet werden. Bitte versuche es später erneut.",
+    },
     footer: {
       text: "Lokaler FIT-Transfer für einen ruhigeren Astrofotografie-Workflow.",
       legal: "AstroSync Companion ist eine unabhängige, inoffizielle Drittanbieter-Software für Astrofotografie. Seestar und ZWO sind Marken ihrer jeweiligen Eigentümer. Es besteht keine Verbindung, Partnerschaft oder Unterstützung durch ZWO.",
@@ -107,7 +129,7 @@ const content = {
   },
   en: {
     skip: "Skip to content",
-    nav: { features: "Features", workflow: "Workflow", privacy: "Privacy", faq: "FAQ", cta: "Beta & release" },
+    nav: { features: "Features", workflow: "Workflow", privacy: "Privacy", faq: "FAQ", contact: "Contact", cta: "Beta & release" },
     hero: {
       eyebrow: "Independent Windows app · Private beta", titleTop: "Your Seestar captures.", titleAccent: "Automatically on your PC.",
       text: "AstroSync Companion transfers new Light FITs safely and neatly to your Windows PC while you observe – ready for your astrophotography workflow.",
@@ -164,6 +186,8 @@ const content = {
       text: "AstroSync Companion works inside your local network. It needs neither a user account nor cloud storage to synchronize your FIT files.",
       points: ["No FIT uploads to the cloud", "No analytics or advertising SDKs", "Source files are never deleted", "Settings and history stay local"],
       note: "AstroSync Companion copies matching Light FITs from local Seestar storage to the PC destination you choose. Your originals remain untouched. Optional Astro-ID reference images use astronomy web services and are disabled by default.",
+      contactNote: "When you use the contact form, your name, email address, selected topic and message are processed by Formspree, forwarded to us and stored for 30 days on the free plan. Please do not submit sensitive information or credentials.",
+      contactLink: "Formspree privacy policy",
     },
     release: {
       eyebrow: "What comes next", title: "Currently in development.",
@@ -181,6 +205,26 @@ const content = {
         { q: "Do I need a user account?", a: "No AstroSync Companion account is required for local synchronization." },
         { q: "Is AstroSync Companion official ZWO software?", a: "No. AstroSync Companion is independent, unofficial third-party astrophotography software. It is not affiliated with or endorsed by ZWO." },
       ],
+    },
+    contact: {
+      eyebrow: "Get in touch",
+      title: "Questions about AstroSync Companion?",
+      text: "Use the form for questions, feedback or to express interest in a future beta test. Your message is forwarded directly to the developer.",
+      name: "Name", namePlaceholder: "Your name",
+      email: "Email address", emailPlaceholder: "name@example.com",
+      topic: "Topic", topicPlaceholder: "Please select",
+      topics: [
+        { value: "general", label: "General question" },
+        { value: "beta", label: "Beta testing interest" },
+        { value: "feedback", label: "App feedback" },
+        { value: "website", label: "Website feedback" },
+      ],
+      message: "Message", messagePlaceholder: "How can we help?",
+      privacyBefore: "I have read the ", privacyLink: "privacy notice", privacyAfter: " and agree that my information may be submitted through Formspree.",
+      caution: "Please do not send passwords, credentials or other sensitive information.",
+      send: "Send message", sending: "Sending …",
+      success: "Thank you! Your message has been submitted successfully.",
+      error: "Your message could not be sent. Please try again later.",
     },
     footer: {
       text: "Local FIT transfer for a calmer astrophotography workflow.",
@@ -318,7 +362,28 @@ function AppShowcase({ lang }: { lang: Language }) {
 
 export default function Home() {
   const [lang, setLang] = useState<Language>("de");
+  const [contactStatus, setContactStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const c = content[lang];
+
+  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setContactStatus("sending");
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("Form submission failed");
+      form.reset();
+      setContactStatus("success");
+    } catch {
+      setContactStatus("error");
+    }
+  };
 
   useLayoutEffect(() => {
     const navigation = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
@@ -362,7 +427,7 @@ export default function Home() {
         <header className="site-header">
           <a className="brand" href="#top" aria-label="AstroSync Companion home"><LogoMark /><span>AstroSync Companion</span></a>
           <nav className="main-nav" aria-label={lang === "de" ? "Hauptnavigation" : "Main navigation"}>
-            <a href="#features">{c.nav.features}</a><a href="#workflow">{c.nav.workflow}</a><a href="#privacy">{c.nav.privacy}</a><a href="#faq">{c.nav.faq}</a>
+            <a href="#features">{c.nav.features}</a><a href="#workflow">{c.nav.workflow}</a><a href="#privacy">{c.nav.privacy}</a><a href="#faq">{c.nav.faq}</a><a href="#contact">{c.nav.contact}</a>
           </nav>
           <div className="header-actions">
             <div className="language-switch" aria-label={lang === "de" ? "Sprache wählen" : "Choose language"}>
@@ -401,7 +466,7 @@ export default function Home() {
 
           <section className="privacy-section section-wrap" id="privacy">
             <div className="privacy-visual" aria-hidden="true"><div className="privacy-orbit privacy-orbit-one" /><div className="privacy-orbit privacy-orbit-two" /><div className="privacy-core"><Icon name="lock" size={31} /><span>LOCAL</span></div><span className="privacy-node node-source"><Icon name="network" size={20} /></span><span className="privacy-node node-target"><Icon name="windows" size={20} /></span><span className="data-dot dot-one" /><span className="data-dot dot-two" /><span className="data-dot dot-three" /></div>
-            <div className="privacy-copy"><div className="eyebrow eyebrow-plain">{c.privacy.eyebrow}</div><h2>{c.privacy.title}</h2><p className="privacy-lead">{c.privacy.text}</p><ul>{c.privacy.points.map((point) => <li key={point}><span><Icon name="check" size={14} /></span>{point}</li>)}</ul><div className="privacy-note"><Icon name="shield" size={20} /><p>{c.privacy.note}</p></div></div>
+            <div className="privacy-copy"><div className="eyebrow eyebrow-plain">{c.privacy.eyebrow}</div><h2>{c.privacy.title}</h2><p className="privacy-lead">{c.privacy.text}</p><ul>{c.privacy.points.map((point) => <li key={point}><span><Icon name="check" size={14} /></span>{point}</li>)}</ul><div className="privacy-note"><Icon name="shield" size={20} /><p>{c.privacy.note}</p></div><div className="privacy-note privacy-note-form" id="contact-privacy"><Icon name="lock" size={20} /><p>{c.privacy.contactNote} <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer">{c.privacy.contactLink}</a></p></div></div>
           </section>
 
           <section className="release-section section-wrap" id="release">
@@ -410,6 +475,22 @@ export default function Home() {
           </section>
 
           <section className="faq-section section-wrap" id="faq"><div className="section-heading faq-heading"><div className="eyebrow eyebrow-plain">{c.faq.eyebrow}</div><h2>{c.faq.title}</h2></div><div className="faq-list">{c.faq.items.map((item) => <details key={item.q}><summary><span>{item.q}</span><i aria-hidden="true" /></summary><p>{item.a}</p></details>)}</div></section>
+
+          <section className="contact-section" id="contact"><div className="contact-inner section-wrap">
+            <div className="contact-copy"><div className="eyebrow eyebrow-plain">{c.contact.eyebrow}</div><h2>{c.contact.title}</h2><p>{c.contact.text}</p><div className="contact-caution"><Icon name="lock" size={17} /><span>{c.contact.caution}</span></div></div>
+            <form className="contact-form" action="https://formspree.io/f/myegqnvr" method="POST" onSubmit={handleContactSubmit}>
+              <input type="hidden" name="_subject" value="AstroSync Companion – Kontaktformular" />
+              <label className="contact-trap" aria-hidden="true">Website<input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" /></label>
+              <div className="contact-fields-row">
+                <label><span>{c.contact.name}</span><input type="text" name="name" placeholder={c.contact.namePlaceholder} autoComplete="name" maxLength={100} required /></label>
+                <label><span>{c.contact.email}</span><input type="email" name="email" placeholder={c.contact.emailPlaceholder} autoComplete="email" maxLength={160} required /></label>
+              </div>
+              <label><span>{c.contact.topic}</span><select name="topic" defaultValue="" required><option value="" disabled>{c.contact.topicPlaceholder}</option>{c.contact.topics.map((topic) => <option value={topic.value} key={topic.value}>{topic.label}</option>)}</select></label>
+              <label><span>{c.contact.message}</span><textarea name="message" placeholder={c.contact.messagePlaceholder} rows={6} minLength={10} maxLength={3000} required /></label>
+              <label className="contact-consent"><input type="checkbox" name="privacy_acknowledged" value="yes" required /><span>{c.contact.privacyBefore}<a href="#contact-privacy">{c.contact.privacyLink}</a>{c.contact.privacyAfter}</span></label>
+              <div className="contact-submit-row"><button className="button button-primary" type="submit" disabled={contactStatus === "sending"}>{contactStatus === "sending" ? c.contact.sending : c.contact.send}<Icon name="arrow" size={17} /></button><p className={`contact-status ${contactStatus}`} aria-live="polite">{contactStatus === "success" ? c.contact.success : contactStatus === "error" ? c.contact.error : ""}</p></div>
+            </form>
+          </div></section>
         </main>
 
         <footer className="site-footer"><div className="footer-main section-wrap"><div><a className="brand" href="#top"><LogoMark /><span>AstroSync Companion</span></a><p>{c.footer.text}</p></div><a className="back-top" href="#top" aria-label={c.footer.top}>{c.footer.top}<span><Icon name="home" size={16} /></span></a></div><div className="footer-legal section-wrap"><p>{c.footer.legal}</p><span>© 2026 AstroSync Companion</span></div></footer>
