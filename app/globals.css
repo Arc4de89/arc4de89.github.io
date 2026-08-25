@@ -351,6 +351,10 @@ summary:focus-visible {
   box-shadow: 0 12px 28px rgba(31, 140, 163, 0.14), inset 0 1px rgba(255, 255, 255, 0.06);
 }
 
+.hero-contact-button {
+  display: none;
+}
+
 .trust-row {
   display: flex;
   flex-wrap: wrap;
@@ -2063,6 +2067,10 @@ summary:focus-visible {
 
   .main-nav {
     display: none;
+  }
+
+  .hero-contact-button {
+    display: inline-flex;
   }
 
   .header-actions {
