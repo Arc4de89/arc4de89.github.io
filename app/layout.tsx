@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://arc4de89.github.io"),
+  metadataBase: new URL("https://astrosync.ch"),
   title: "AstroSync Companion | FITS-Transfer für Seestar",
   description: "Unabhängige Windows-App für Astrofotografie: AstroSync Companion überträgt Light-FITs lokal vom Seestar auf den PC – mit Live-Vorschau und Session-Workflow.",
   applicationName: "AstroSync Companion",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website", locale: "de_CH", alternateLocale: "en_US", title: "AstroSync Companion",
     description: "Unabhängige Windows-App für lokalen FITS-Transfer, Live-Vorschau und Astrofotografie-Sessions.", siteName: "AstroSync Companion",
-    url: "https://arc4de89.github.io",
+    url: "https://astrosync.ch",
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "AstroSync Companion – Deine Seestar-Aufnahmen automatisch auf deinem PC" }],
   },
   twitter: {
@@ -31,7 +31,7 @@ const structuredData = {
   applicationSubCategory: "Astrophotography",
   operatingSystem: "Windows",
   softwareVersion: "Private Beta",
-  url: "https://arc4de89.github.io/",
+  url: "https://astrosync.ch/",
   description: "Independent Windows application for local Light FIT transfer, live preview and astrophotography session workflows with Seestar telescopes.",
   featureList: [
     "Automatic local Light FIT transfer",
