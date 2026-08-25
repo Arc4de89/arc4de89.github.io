@@ -434,7 +434,6 @@ export default function Home() {
               <button type="button" className={lang === "de" ? "active" : ""} onClick={() => setLang("de")} aria-pressed={lang === "de"}>DE</button><span>/</span>
               <button type="button" className={lang === "en" ? "active" : ""} onClick={() => setLang("en")} aria-pressed={lang === "en"}>EN</button>
             </div>
-            <a className="header-cta" href="#contact">{c.nav.cta}<Icon name="arrow" size={15} /></a>
           </div>
         </header>
 
@@ -444,7 +443,7 @@ export default function Home() {
             <div className="hero-copy">
               <div className="eyebrow"><span className="eyebrow-dot" />{c.hero.eyebrow}</div>
               <h1>{c.hero.titleTop}<br /><span>{c.hero.titleAccent}</span></h1><p>{c.hero.text}</p>
-              <div className="hero-actions"><a className="button button-primary" href="#features">{c.hero.primary}<Icon name="arrow" size={17} /></a><a className="button button-secondary" href="#workflow">{c.hero.secondary}</a><a className="button button-contact" href="#contact">{c.hero.contact}<Icon name="arrow" size={17} /></a></div>
+              <div className="hero-actions"><a className="button button-primary" href="#features">{c.hero.primary}<Icon name="arrow" size={17} /></a><a className="button button-secondary" href="#workflow">{c.hero.secondary}</a><a className="button button-contact hero-contact-button" href="#contact">{c.hero.contact}<Icon name="arrow" size={17} /></a></div>
               <div className="trust-row">{c.hero.trust.map((item, index) => <span key={item}><Icon name={index === 0 ? "lock" : index === 1 ? "copy" : "windows"} size={15} />{item}</span>)}</div>
             </div>
             <ProductVisual lang={lang} />
