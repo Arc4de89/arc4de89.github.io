@@ -21,13 +21,13 @@ type IconName =
 const content = {
   de: {
     skip: "Zum Inhalt springen",
-    nav: { features: "Funktionen", workflow: "Ablauf", privacy: "Datenschutz", faq: "FAQ", contact: "Kontakt", cta: "Beta & Release" },
+    nav: { features: "Funktionen", workflow: "Ablauf", privacy: "Datenschutz", faq: "FAQ", contact: "Kontakt", cta: "Kontakt aufnehmen" },
     hero: {
       eyebrow: "Unabhängige Windows-App · Private Beta",
       titleTop: "Deine Seestar-Aufnahmen.",
       titleAccent: "Automatisch auf deinem PC.",
       text: "AstroSync Companion überträgt neue Light-FITs während deiner Beobachtung sicher und geordnet auf deinen Windows-PC – bereit für deinen Astrofotografie-Workflow.",
-      primary: "Funktionen entdecken", secondary: "So funktioniert es",
+      primary: "Funktionen entdecken", secondary: "So funktioniert es", contact: "Kontakt aufnehmen",
       trust: ["Kein Cloud-Upload", "Quelle bleibt unverändert", "Für Windows"],
     },
     app: {
@@ -129,11 +129,11 @@ const content = {
   },
   en: {
     skip: "Skip to content",
-    nav: { features: "Features", workflow: "Workflow", privacy: "Privacy", faq: "FAQ", contact: "Contact", cta: "Beta & release" },
+    nav: { features: "Features", workflow: "Workflow", privacy: "Privacy", faq: "FAQ", contact: "Contact", cta: "Get in touch" },
     hero: {
       eyebrow: "Independent Windows app · Private beta", titleTop: "Your Seestar captures.", titleAccent: "Automatically on your PC.",
       text: "AstroSync Companion transfers new Light FITs safely and neatly to your Windows PC while you observe – ready for your astrophotography workflow.",
-      primary: "Explore features", secondary: "How it works", trust: ["No cloud upload", "Source stays untouched", "Built for Windows"],
+      primary: "Explore features", secondary: "How it works", contact: "Get in touch", trust: ["No cloud upload", "Source stays untouched", "Built for Windows"],
     },
     app: {
       version: "Beta", tabs: ["Overview", "Live FIT", "Astro-ID", "Settings"], connected: "Seestar connected", auto: "Auto-Sync active",
@@ -434,7 +434,7 @@ export default function Home() {
               <button type="button" className={lang === "de" ? "active" : ""} onClick={() => setLang("de")} aria-pressed={lang === "de"}>DE</button><span>/</span>
               <button type="button" className={lang === "en" ? "active" : ""} onClick={() => setLang("en")} aria-pressed={lang === "en"}>EN</button>
             </div>
-            <a className="header-cta" href="#release">{c.nav.cta}<Icon name="arrow" size={15} /></a>
+            <a className="header-cta" href="#contact">{c.nav.cta}<Icon name="arrow" size={15} /></a>
           </div>
         </header>
 
@@ -444,7 +444,7 @@ export default function Home() {
             <div className="hero-copy">
               <div className="eyebrow"><span className="eyebrow-dot" />{c.hero.eyebrow}</div>
               <h1>{c.hero.titleTop}<br /><span>{c.hero.titleAccent}</span></h1><p>{c.hero.text}</p>
-              <div className="hero-actions"><a className="button button-primary" href="#features">{c.hero.primary}<Icon name="arrow" size={17} /></a><a className="button button-secondary" href="#workflow">{c.hero.secondary}</a></div>
+              <div className="hero-actions"><a className="button button-primary" href="#features">{c.hero.primary}<Icon name="arrow" size={17} /></a><a className="button button-secondary" href="#workflow">{c.hero.secondary}</a><a className="button button-contact" href="#contact">{c.hero.contact}<Icon name="arrow" size={17} /></a></div>
               <div className="trust-row">{c.hero.trust.map((item, index) => <span key={item}><Icon name={index === 0 ? "lock" : index === 1 ? "copy" : "windows"} size={15} />{item}</span>)}</div>
             </div>
             <ProductVisual lang={lang} />
