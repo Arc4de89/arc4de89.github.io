@@ -1885,6 +1885,15 @@ summary:focus-visible {
   background: #0b1024;
 }
 
+.turnstile-wrap {
+  min-height: 65px;
+  width: 100%;
+}
+
+.turnstile-wrap .cf-turnstile {
+  width: 100%;
+}
+
 .contact-consent {
   display: flex;
   align-items: flex-start;
