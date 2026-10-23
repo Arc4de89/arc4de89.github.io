@@ -241,6 +241,36 @@ function LogoMark({ small = false }: { small?: boolean }) {
   return <span className={small ? "logo-mark logo-mark-small" : "logo-mark"} aria-hidden="true"><img src="/app-icon.png" alt="" /></span>;
 }
 
+function SkyBackdrop() {
+  return (
+    <div className="hero-atmosphere" aria-hidden="true">
+      <div className="sky-nebula" />
+      <svg className="sky-chart" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice">
+        <g className="sky-orbits" transform="translate(1050 440) rotate(-24)">
+          <circle r="244" /><circle r="328" /><circle r="414" />
+          <ellipse rx="414" ry="130" />
+          <path d="M-450 0H450M0-450V450" />
+        </g>
+        <g className="sky-constellation">
+          <path d="m716 158 102 57 115-72 149 60 139-44M1082 203l-26 101 94 68 86-31" />
+          <circle cx="716" cy="158" r="2.5" /><circle cx="818" cy="215" r="3" />
+          <circle cx="933" cy="143" r="2" /><circle cx="1082" cy="203" r="3" />
+          <circle cx="1221" cy="159" r="2" /><circle cx="1056" cy="304" r="2" />
+          <circle cx="1150" cy="372" r="2.5" /><circle cx="1236" cy="341" r="2" />
+        </g>
+        <g className="sky-stars">
+          {Array.from({ length: 46 }, (_, i) => (
+            <circle key={i} cx={28 + (i * 293) % 1380} cy={72 + (i * 167) % 710} r={i % 7 === 0 ? 1.8 : 0.8} opacity={0.2 + (i % 5) * 0.13} />
+          ))}
+        </g>
+        <g className="sky-crosshairs">
+          <path d="M1264 544h18m-9-9v18M678 642h14m-7-7v14M1015 97h12m-6-6v12" />
+        </g>
+      </svg>
+    </div>
+  );
+}
+
 function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
   const paths: Record<IconName, React.ReactNode> = {
     arrow: <><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></>,
@@ -442,7 +472,7 @@ export default function Home() {
 
         <main id="main">
           <section className="hero section-wrap">
-            <div className="hero-atmosphere" aria-hidden="true"><span /><span /><span /></div>
+            <SkyBackdrop />
             <div className="hero-copy">
               <div className="eyebrow"><span className="eyebrow-dot" />{c.hero.eyebrow}</div>
               <h1>{c.hero.titleTop}<br /><span>{c.hero.titleAccent}</span></h1><p>{c.hero.text}</p>
