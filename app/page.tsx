@@ -80,9 +80,10 @@ const content = {
     privacy: {
       eyebrow: "Local first", title: "Deine Aufnahmen bleiben deine Aufnahmen.",
       text: "AstroSync Companion arbeitet in deinem lokalen Netzwerk. Es braucht weder ein Benutzerkonto noch einen Cloud-Speicher, um deine FIT-Dateien zu synchronisieren.",
-      points: ["Keine FIT-Uploads in eine Cloud", "Keine Analyse- oder Werbe-SDKs", "Quelldateien werden nicht gelöscht", "Einstellungen und Verlauf bleiben lokal"],
+      points: ["Keine FIT-Uploads in eine Cloud", "Keine Analyse- oder Werbe-SDKs in der Windows-App", "Quelldateien werden nicht gelöscht", "Einstellungen und Verlauf bleiben lokal"],
       note: "AstroSync Companion kopiert passende Light-FITs vom lokalen Seestar-Speicher an dein gewähltes PC-Ziel. Die Originaldateien bleiben unangetastet. Optionale Astro-ID-Referenzbilder verwenden astronomische Onlinedienste und sind standardmässig deaktiviert.",
       contactNote: "Beim Kontaktformular werden Name, E-Mail-Adresse, gewähltes Thema und Nachricht über Formspree verarbeitet, an uns weitergeleitet und im kostenlosen Tarif für 30 Tage gespeichert. Zum Schutz vor automatisierten Einsendungen verwenden wir Cloudflare Turnstile, das dafür erforderliche technische Verbindungs- und Browserdaten verarbeitet. Bitte übermittle keine sensiblen Informationen oder Zugangsdaten.",
+      analyticsNote: "Diese Website verwendet Cloudflare Web Analytics zur Auswertung von Seitenaufrufen und Ladezeiten. Dabei werden technische Nutzungs- und Leistungsdaten an Cloudflare übermittelt. Der Dienst verwendet keine Analyse-Cookies und verfolgt Besucher nicht über verschiedene Websites hinweg. Diese Analyse betrifft ausschliesslich die Website, nicht die Windows-App.",
       contactLink: "Datenschutz bei Formspree", cloudflareLink: "Datenschutz bei Cloudflare",
     },
     release: {
@@ -185,9 +186,10 @@ const content = {
     privacy: {
       eyebrow: "Local first", title: "Your captures stay your captures.",
       text: "AstroSync Companion works inside your local network. It needs neither a user account nor cloud storage to synchronize your FIT files.",
-      points: ["No FIT uploads to the cloud", "No analytics or advertising SDKs", "Source files are never deleted", "Settings and history stay local"],
+      points: ["No FIT uploads to the cloud", "No analytics or advertising SDKs in the Windows app", "Source files are never deleted", "Settings and history stay local"],
       note: "AstroSync Companion copies matching Light FITs from local Seestar storage to the PC destination you choose. Your originals remain untouched. Optional Astro-ID reference images use astronomy web services and are disabled by default.",
       contactNote: "When you use the contact form, your name, email address, selected topic and message are processed by Formspree, forwarded to us and stored for 30 days on the free plan. To protect against automated submissions, we use Cloudflare Turnstile, which processes the technical connection and browser data required for this purpose. Please do not submit sensitive information or credentials.",
+      analyticsNote: "This website uses Cloudflare Web Analytics to measure page views and loading times. Technical usage and performance data is transmitted to Cloudflare. The service does not use analytics cookies or track visitors across different websites. This analysis applies only to the website, not the Windows app.",
       contactLink: "Formspree privacy policy", cloudflareLink: "Cloudflare privacy policy",
     },
     release: {
@@ -466,7 +468,7 @@ export default function Home() {
 
           <section className="privacy-section section-wrap" id="privacy">
             <div className="privacy-visual" aria-hidden="true"><div className="privacy-orbit privacy-orbit-one" /><div className="privacy-orbit privacy-orbit-two" /><div className="privacy-core"><Icon name="lock" size={31} /><span>LOCAL</span></div><span className="privacy-node node-source"><Icon name="network" size={20} /></span><span className="privacy-node node-target"><Icon name="windows" size={20} /></span><span className="data-dot dot-one" /><span className="data-dot dot-two" /><span className="data-dot dot-three" /></div>
-            <div className="privacy-copy"><div className="eyebrow eyebrow-plain">{c.privacy.eyebrow}</div><h2>{c.privacy.title}</h2><p className="privacy-lead">{c.privacy.text}</p><ul>{c.privacy.points.map((point) => <li key={point}><span><Icon name="check" size={14} /></span>{point}</li>)}</ul><div className="privacy-note"><Icon name="shield" size={20} /><p>{c.privacy.note}</p></div><div className="privacy-note privacy-note-form" id="contact-privacy"><Icon name="lock" size={20} /><p>{c.privacy.contactNote} <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer">{c.privacy.contactLink}</a> · <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noreferrer">{c.privacy.cloudflareLink}</a></p></div></div>
+            <div className="privacy-copy"><div className="eyebrow eyebrow-plain">{c.privacy.eyebrow}</div><h2>{c.privacy.title}</h2><p className="privacy-lead">{c.privacy.text}</p><ul>{c.privacy.points.map((point) => <li key={point}><span><Icon name="check" size={14} /></span>{point}</li>)}</ul><div className="privacy-note"><Icon name="shield" size={20} /><p>{c.privacy.note}</p></div><div className="privacy-note"><Icon name="shield" size={20} /><p>{c.privacy.analyticsNote} <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noreferrer">{c.privacy.cloudflareLink}</a></p></div><div className="privacy-note privacy-note-form" id="contact-privacy"><Icon name="lock" size={20} /><p>{c.privacy.contactNote} <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer">{c.privacy.contactLink}</a> · <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noreferrer">{c.privacy.cloudflareLink}</a></p></div></div>
           </section>
 
           <section className="release-section section-wrap" id="release">
